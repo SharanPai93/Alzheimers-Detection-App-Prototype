@@ -8,17 +8,17 @@ from sklearn.metrics import classification_report
 from sklearn import svm
 import pickle
 '''
-#for display purposes
+# for display purposes
 from sklearn.tree import export_graphviz
 from six import StringIO  
 from IPython.display import Image  
 import pydotplus
 '''
 # load dataset
-#As I cannot put the NACC Data in public, make an account there and access the data, then paste it in the placeholder file name
-#df = pd.read_csv("your/file/name.csv")
+# As I cannot put the NACC Data in public, make an account there and access the data, then paste it in the placeholder file name
+# df = pd.read_csv("your/file/name.csv")
 
-#split dataset in features and target variable
+# split dataset in features and target variable
 
 X=df.drop(columns=["AlzheimerStage","AntiAlzMed",'BMI'])
 y=df["AlzheimerStage"]
@@ -72,5 +72,3 @@ pickle.dump(clf, open(filename, 'wb'))
 
 with open('scaler.pkl','wb') as f:
     pickle.dump(scaler,f)
-
-#Check out the class names - how its converted to string...it was originally just y.unique()
